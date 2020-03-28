@@ -26,26 +26,26 @@ require_once("database.php");
 ?>
 <body>
 
-  <h2>Driver</h2>
+  <h2>PC</h2>
 
   <table>
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>License</th>
+      <th>Distributor</th>
     </tr>
     <?php
-    $sql = "SELECT * FROM driver ORDER by name ASC";
+    $sql = "SELECT * FROM pc ORDER by name ASC";
     $result = $c->query($sql);
     if ($result->num_rows > 0) {
 
-      $drivers = array();
+      $pcs = array();
       $i = 0;
       while ($obj = $result->fetch_assoc()) {
         echo '<tr>';
         echo '<td>' . $obj['id'] . '</td>';
         echo '<td>' . $obj['name'] . '</td>';
-        echo '<td>' . $obj['license'] . '</td>';
+        echo '<td>' . $obj['distributor'] . '</td>';
       }
     } else {
       echo "Empty table.";
