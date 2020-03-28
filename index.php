@@ -32,20 +32,20 @@ require_once("database.php");
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Distributor</th>
+      <th>License</th>
     </tr>
     <?php
-    $sql = "SELECT * FROM pc ORDER by name ASC";
+    $sql = "SELECT * FROM driver ORDER by name ASC";
     $result = $c->query($sql);
     if ($result->num_rows > 0) {
 
-      $pcs = array();
+      $drivers = array();
       $i = 0;
       while ($obj = $result->fetch_assoc()) {
         echo '<tr>';
         echo '<td>' . $obj['id'] . '</td>';
         echo '<td>' . $obj['name'] . '</td>';
-        echo '<td>' . $obj['distributor'] . '</td>';
+        echo '<td>' . $obj['license'] . '</td>';
       }
     } else {
       echo "Empty table.";
